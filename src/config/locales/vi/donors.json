@@ -1,0 +1,14 @@
+{
+  "title": "Ủng hộ",
+  "fieldNameProject": "Tên chương trình",
+  "placeholderNameProject": "Nhập tên chương trình cần tìm",
+
+  "fieldDonator": "Cá nhân/tổ chức ủng hộ",
+  "placeholderDonator": "Nhập tên cá nhân/tổ chức ủng hộ",
+  "fieldDonateDate": "Ngày ủng hộ",
+
+  "search": "Tìm kiếm",
+  "clear": "Xóa",
+
+  "fieldMoney": "Số tiền (VNĐ)"
+}

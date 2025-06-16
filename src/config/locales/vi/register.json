@@ -1,0 +1,20 @@
+{
+  "brand": "BK Hope",
+  "title": "Đăng ký tài khoản",
+  "fullName": "Họ và tên",
+  "userName": "Tên tài khoản",
+  "phone": "Số điện thoại",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "confirmPassword": "Xác nhận mật khẩu",
+  "register": "Đăng ký",
+  "haveAccount": "Bạn đã có tài khoản?",
+  "login": "Đăng nhập",
+  "required": "Trường này là bắt buộc",
+  "invalidPhone": "Số điện thoại phải gồm đúng 10 chữ số.",
+  "invalidEmail": "Email không hợp lệ",
+  "passwordMinLength": "Mật khẩu phải có ít nhất 8 ký tự",
+  "passwordMaxLength": "Mật khẩu không được vượt quá 20 ký tự",
+  "passwordRegex": "Mật khẩu phải có chữ hoa, chữ thường, số và ký tự đặc biệt",
+  "confirmPasswordNotMatch": "Xác nhận mật khẩu không khớp"
+}

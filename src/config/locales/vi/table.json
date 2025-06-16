@@ -1,0 +1,13 @@
+{
+  "total": "Tổng cộng",
+  "items": "mục",
+  "rowsPerPage": "Số hàng mỗi trang",
+  "selected": "đã chọn",
+  "btnPrev": "Trước",
+  "btnNext": "Sau",
+  "noDataFound": "Không tìm thấy dữ liệu",
+  "deleteRecords": "Xóa bản ghi",
+  "deleteSelectedMessage": "Hành động này không thể hoàn tác. Điều này sẽ xóa vĩnh viễn ({{count}}) bản ghi.",
+  "confirm": "Xác nhận",
+  "cancel": "Hủy"
+}

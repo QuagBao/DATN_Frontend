@@ -1,0 +1,21 @@
+{
+  "title": "Chương trình",
+  "inProgress": "Đang tiến hành",
+  "done": "Đã hoàn thành",
+
+  "nameProject": "Tên chương trình",
+  "fieldNameProject": "Tên chương trình",
+  "placeholderNameProject": "Nhập tên chương trình cần tìm",
+
+  "fieldDateRange": "Ngày diễn ra",
+  "fieldStatus": "Trạng thái",
+  "placeholderStatus": "Chọn trạng thái",
+  "allStatus": "Tất cả trạng thái",
+  "search": "Tìm kiếm",
+  "clear": "Xóa",
+
+  "donors": "Ủng hộ",
+  "collaborator": "Tham gia cộng tác viên",
+
+  "copyContent": "Đã sao chép vào bộ nhớ tạm"
+}

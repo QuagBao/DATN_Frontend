@@ -1,0 +1,30 @@
+services:
+  frontend:
+    build:
+      context: . # thư mục đang chứa Dockerfile của FE
+      dockerfile: Dockerfile
+    container_name: frontend-app
+    restart: unless-stopped
+
+    env_file:
+      - .env # load các biến từ .env (hoặc .env.production)
+
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT}
+      NEXT_PUBLIC_URL: ${NEXT_PUBLIC_URL}
+      NEXT_PUBLIC_BANK_ID: ${NEXT_PUBLIC_BANK_ID}
+      NEXT_PUBLIC_ACCOUNT_NO: ${NEXT_PUBLIC_ACCOUNT_NO}
+      NEXT_PUBLIC_ACCOUNT_NAME: ${NEXT_PUBLIC_ACCOUNT_NAME}
+      ENCRYPTION_SECRET: ${ENCRYPTION_SECRET}
+      NEXT_PUBLIC_RESPOND_GG_SHEET: ${NEXT_PUBLIC_RESPOND_GG_SHEET}
+
+    ports:
+      - '3000:3000'
+
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    external: true

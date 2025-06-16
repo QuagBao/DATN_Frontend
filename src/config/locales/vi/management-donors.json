@@ -1,0 +1,16 @@
+{
+  "title": "Quản lý nhà tài trợ",
+
+  "fieldDonor": "Cá nhân/ Tổ chức",
+  "placeholderDonor": "Nhập tên cá nhân/ tổ chức",
+  "fieldProject": "Dự án",
+  "placeholderProject": "Nhập tên dự án",
+  "fieldDonateDate": "Ngày quyên góp",
+  "fieldName": "Cá nhân/ Tổ chức ủng hộ",
+  "fieldAmount": "Số tiền (VNĐ)",
+  "exportDonor": "In danh sách",
+
+  "success": "Thành công",
+  "clear": "Xóa bộ lọc",
+  "search": "Tìm kiếm"
+}

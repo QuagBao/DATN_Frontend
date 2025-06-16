@@ -1,0 +1,12 @@
+{
+  "brand": "BK Hope",
+  "title": "Đăng nhập",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "login": "Đăng nhập",
+  "register": "Đăng ký",
+  "forgotPassword": "Quên mật khẩu",
+  "invalidEmail": "Email không hợp lệ",
+  "dontHaveAccount": "Chưa có tài khoản?",
+  "required": "Trường này là bắt buộc"
+}

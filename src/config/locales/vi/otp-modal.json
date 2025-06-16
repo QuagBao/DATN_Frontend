@@ -1,0 +1,9 @@
+{
+  "title": "OTP",
+  "pleaseEnter": "Quý khách vui lòng nhập mã OTP đã được gửi về email",
+  "dontReceiveCode": "Không nhận được code?",
+  "confirm": "Xác nhận",
+  "required": "OTP là bắt buộc",
+  "invalid": "OTP không hợp lệ",
+  "resend": "Gửi lại"
+}

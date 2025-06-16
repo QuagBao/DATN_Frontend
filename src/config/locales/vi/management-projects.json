@@ -1,0 +1,45 @@
+{
+  "title": "Quản lý sự kiện",
+  "titleProject": "Quản lý sự kiện",
+
+  "fieldProject": "Tên chương trình",
+  "placeholderProject": "Nhập tên chương trình cần tìm",
+  "placeholderNameProject": "Tên chương trình",
+  "fieldStatus": "Trạng thái",
+  "placeholderStatus": "Chọn trạng thái",
+  "fieldRangeDate": "Thời gian diễn ra",
+  "fieldStartDate": "Ngày bắt đầu",
+  "fieldEndDate": "Ngày kết thúc",
+  "fieldContent": "Nội dung",
+  "fieldAction": "Hành động",
+  "placeholderContent": "Giới thiệu về chương trình",
+  "fieldTotalNumeric": "Mục tiêu",
+  "placeholderTotalNumeric": "Tổng số tiền mục tiêu",
+  "fieldCurrentNumeric": "Đã đạt",
+  "fieldDescription": "Mô tả",
+  "placeholderDescription": "Tóm tắt nội dung giới thiệu",
+
+  "existingImages": "Ảnh dự án",
+  "newImages": "Ảnh mới",
+  "warning": "Cảnh báo",
+  "mustHaveAtLeastOneImage": "Dự án phải có ít nhất 1 ảnh",
+
+  "detailProject": "Chi tiết chương trình",
+  "editProject": "Cập nhật chương trình",
+  "deleteProject": "Xóa chương trình",
+  "modalDeleteSelectedMessage": "Hành động này không thể hoàn tác. Điều này sẽ xóa vĩnh viễn chương trình được chọn.",
+
+  "titleDetailProject": "Thông tin chi tiết chương trình",
+  "success": "Thành công",
+  "inProgress": "Đang tiến hành",
+  "done": "Đã hoàn thành",
+  "addNew": "Tạo mới",
+  "search": "Tìm kiếm",
+  "clear": "Xóa",
+  "save": "Lưu",
+  "cancel": "Huỷ",
+  "confirm": "Xác nhận",
+
+  "modalCreateTitle": "Tạo chương trình mới",
+  "modalEditTitle": "Cập nhật chương trình"
+}

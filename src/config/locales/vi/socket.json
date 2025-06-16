@@ -1,0 +1,8 @@
+{
+  "notification": "Thông báo",
+  "success": "Thành công",
+  "transactionCanceledSuccessfully": "Giao dịch đã hủy thành công",
+  "requestProcessing": "Yêu cầu đang được xử lý",
+  "depositRequestSuccessful": "Yêu cầu nạp tiền thành công",
+  "createDepositWithdrawalSuccess": "Tạo yêu cầu nạp tiền thành công"
+}

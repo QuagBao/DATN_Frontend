@@ -1,0 +1,32 @@
+{
+  "title": "Quản lý tình nguyện viên",
+
+  "fieldProject": "Dự án",
+  "placeholderProject": "Tìm dự án",
+  "fieldUniversalSearch": "Tình nguyện viên",
+  "placeholderUniversalSearch": "Tìm tên/ email/ số điện thoại",
+  "fieldAccountName": "Tình nguyện viên",
+  "fieldAppliedDate": "Ngày đăng ký",
+  "placeholderStatus": "Chọn trạng thái",
+  "fieldEmail": "Email",
+  "fieldPhone": "Số điện thoại",
+  "fieldAppliedAt": "Ngay nộp đơn",
+  "fieldStatus": "Trạng thái",
+  "fieldActions": "Hành động",
+
+  "approveCollaborator": "Duyệt tình nguyện viện",
+  "deleteCollaborator": "Xóa tình nguyện viện",
+  "modalApproveCollaborator": "Duyệt tình nguyện viên",
+  "modalApproveCollaboratorMessage": "Bạn có chắc chắn muốn duyệt tình nguyện viên đã chọn?",
+  "modalDeleteCollaborator": "Xóa tình nguyện viên",
+  "modalDeleteCollaboratorMessage": "Bạn có chắc chắn muốn xóa tình nguyện viên đã chọn?",
+  "exportCollaborator": "In danh sách",
+
+  "pending": "Chờ duyệt",
+  "active": "Đã duyệt",
+  "search": "Tìm kiếm",
+  "clear": "Xóa",
+  "confirm": "Xác nhận",
+  "success": "Thành công",
+  "cancel": "Hủy"
+}
