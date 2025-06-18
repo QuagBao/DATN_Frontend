@@ -10,13 +10,24 @@ export interface SidebarItem {
   label: string
   icon?: JSX.Element
   path?: string
+  isAdminOnly?: boolean
   items?: { label: string; icon?: JSX.Element; path: string }[]
 }
 
 export const MAIN_SIDEBAR_ITEMS: SidebarItem[] = [
   // 1> Quản lý người dùng
-  { label: 'usersManagement', icon: <UserManagement className='size-5' />, path: APP_ROUTES.RESOURCES.USERS },
-  { label: 'staffsManagement', icon: <StaffManagement className='size-5' />, path: APP_ROUTES.RESOURCES.STAFFS },
+  {
+    label: 'usersManagement',
+    icon: <UserManagement className='size-5' />,
+    path: APP_ROUTES.RESOURCES.USERS,
+    isAdminOnly: true
+  },
+  {
+    label: 'staffsManagement',
+    icon: <StaffManagement className='size-5' />,
+    path: APP_ROUTES.RESOURCES.STAFFS,
+    isAdminOnly: true
+  },
   {
     label: 'projectsManagement',
     icon: <ProjectsManagement className='size-5' />,

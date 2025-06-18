@@ -55,6 +55,7 @@ const imagesSchema = z
 
 export const CreateProjectReqSchema = ProjectBaseSchema.pick({
   name_project: true,
+  description: true,
   content: true,
   start_date: true,
   end_date: true,
@@ -65,8 +66,8 @@ export const CreateProjectReqSchema = ProjectBaseSchema.pick({
 
 export const EditProjectReqSchema = ProjectBaseSchema.pick({
   name_project: true,
-  content: true,
   description: true,
+  content: true,
   start_date: true,
   end_date: true,
   total_numeric: true

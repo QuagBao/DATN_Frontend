@@ -22,7 +22,7 @@ export const PROJECT_FIELDS = (t: (key: string) => string) => [
   { label: t('fieldProject'), type: 'text', placeholder: t('placeholderNameProject'), key: 'name_project' },
   { label: t('fieldRangeDate'), type: 'text', key: 'rangeDate' },
   { label: t('fieldTotalNumeric'), type: 'number', placeholder: t('placeholderTotalNumeric'), key: 'total_numeric' },
-  { label: t('fieldContent'), type: 'text', placeholder: t('placeholderContent'), key: 'content' },
   { label: t('fieldDescription'), type: 'text', placeholder: t('placeholderDescription'), key: 'description' },
+  { label: t('fieldContent'), type: 'text', placeholder: t('placeholderContent'), key: 'content' },
   { label: t('fieldImages'), type: 'text', placeholder: t('placeholderImages'), key: 'images' }
 ]

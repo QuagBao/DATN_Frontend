@@ -74,14 +74,14 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
   const defaultValues = useMemo(
     () => ({
       name_project: projectEdit?.name_project ?? '',
+      description: projectEdit?.description ?? '',
       content: projectEdit?.content ?? '',
       total_numeric: projectEdit?.total_numeric ?? 0,
       start_date: projectEdit?.start_date ?? '',
       end_date: projectEdit?.end_date ?? '',
-      images: undefined,
-      description: isCreateModal ? undefined : projectEdit?.description
+      images: undefined
     }),
-    [isCreateModal, projectEdit]
+    [projectEdit]
   )
 
   const {
@@ -208,7 +208,6 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
     switch (field.key) {
       case 'content':
       case 'description':
-        if (field.key === 'description' && isCreateModal) return null
         return (
           <CustomTextArea
             key={field.key}

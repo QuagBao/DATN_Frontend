@@ -17,11 +17,7 @@ const ProjectForm = dynamic(() => import('./_components/project-form'), {
 })
 
 const StockOrderPage = async () => {
-  return (
-    <div className='mx-auto'>
-      <ProjectForm />
-    </div>
-  )
+  return <ProjectForm />
 }
 
 export default StockOrderPage

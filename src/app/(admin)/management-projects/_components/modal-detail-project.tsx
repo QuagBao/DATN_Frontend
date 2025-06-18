@@ -74,7 +74,9 @@ const ModalDetailProject = ({ isOpen, onClose, projectDetail }: IProjectDetailMo
                 </p>
               </div>
             </div>
-            <p>{projectData?.description}</p>
+            <div className='w-full'>
+              <p>{projectData?.description}</p>
+            </div>
             <div className='grid w-full grid-cols-2 gap-x-5 gap-y-2'>
               <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-1'>

@@ -1,7 +1,6 @@
 import { Crimson } from 'public/assets/fonts/crimson'
 
 import PaginationComponent from '~/components/shared/pagination'
-import { colorClassNames } from '~/shared/constants/nextui-style.constant'
 import { type TPaginationResponse, type TProjectsManagementRes } from '~/shared/validators'
 
 import ProjectCard from '../../project/_components/project-card'

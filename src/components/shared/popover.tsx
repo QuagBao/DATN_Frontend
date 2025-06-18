@@ -5,7 +5,7 @@ import { addToast, Avatar, Button, Divider, Popover, PopoverContent, PopoverTrig
 // import DocumentText from '@icons/document-text.svg'
 import LockIcon from '@icons/lock-closed-outline.svg'
 import Logout from '@icons/logout-icon.svg'
-import Profile from '@icons/profile.svg'
+// import Profile from '@icons/profile.svg'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

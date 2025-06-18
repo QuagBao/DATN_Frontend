@@ -28,6 +28,7 @@ const MainSidebar = () => {
   const pathname = usePathname()
   const { isLoadingPermission } = useAuth()
   const { t } = useTranslation('main-sidebar', { i18n: reactI18n })
+  // const accountType = userInfo?.account_type || ''
 
   const [isExpanded, setIsExpanded] = useState(true)
 
