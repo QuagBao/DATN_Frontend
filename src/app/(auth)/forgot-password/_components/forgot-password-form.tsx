@@ -87,7 +87,7 @@ const ForgotPasswordForm = () => {
       <div className='container mx-auto flex justify-center px-4'>
         <Card className='w-[500px] max-w-full p-4'>
           <CardHeader className='flex flex-col items-center justify-center gap-3'>
-            <div className='grid grid-cols-2 items-center justify-center gap-5'>
+            <div className='flex items-center justify-center gap-5'>
               <Image src='/assets/images/logo_dhbk.jpg' alt='logo' width={60} height={0} />
               <Image src='/assets/images/logo_50_nam.png' alt='logo' width={60} height={0} />
               <Image src='/assets/images/logo_doan.png' alt='logo' width={60} height={0} />

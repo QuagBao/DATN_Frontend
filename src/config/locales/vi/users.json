@@ -1,13 +1,12 @@
 {
   "title": "Quản Lý Người Dùng",
 
-  "placeholderNameUser": "Nhập tên người dùng",
   "placeholderUniversalSearch": "Tên, email, số điện thoại",
   "placeholderStatus": "Chọn trạng thái",
   "fieldNameUser": "Tên người dùng",
   "fieldEmail": "Email",
-  "fieldFullName": "Họ và tên",
   "fieldUserName": "Tên đăng nhập",
+  "fieldPhone": "Số điên thoại",
   "fieldConfirmPassword": "Xác nhận mật khẩu",
   "fieldUniversalSearch": "Tìm kiếm theo thông tin",
   "fieldJoinDate": "Ngày gia nhập",

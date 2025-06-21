@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { useAuth } from '~/config/providers'
 import { APP_ROUTES } from '~/config/routes'
 
 import PopoverAvatar from '../shared/popover'
@@ -15,6 +16,8 @@ const HeaderTopBar = dynamic(() => import('~/components/shared/header-topbar'), 
 })
 
 export default function Header() {
+  const { userInfo } = useAuth()
+
   return (
     <div className='sticky left-0 right-0 top-0 z-40 mx-auto flex items-center justify-between bg-layout px-5 py-2 shadow-md md:px-20'>
       <div className='flex items-center gap-5'>
@@ -61,7 +64,13 @@ export default function Header() {
         <Button as={Link} href={APP_ROUTES.COMMON.DONATION} color='primary'>
           Ủng hộ
         </Button>
-        <PopoverAvatar />
+        {userInfo ? (
+          <PopoverAvatar />
+        ) : (
+          <Button as={Link} href={APP_ROUTES.AUTH.LOGIN} color='primary'>
+            Đăng nhập/ Đăng ký
+          </Button>
+        )}
       </div>
     </div>
   )
