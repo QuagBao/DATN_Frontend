@@ -15,11 +15,7 @@ const ChangePassword = dynamic(() => import('./_components/change-password'), {
 })
 
 const ChangePasswordPage = async () => {
-  return (
-    <section>
-      <ChangePassword />
-    </section>
-  )
+  return <ChangePassword />
 }
 
 export default ChangePasswordPage

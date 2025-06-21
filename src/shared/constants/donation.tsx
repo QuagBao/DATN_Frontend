@@ -65,3 +65,13 @@ export const PROJECT_DONATION = [
   },
   { id: '6', money: 5000000 }
 ]
+export const PROJECT_DONATION_FORM = [
+  {
+    label: 'Tên cá nhân/ tổ chức ủng hộ',
+    type: 'text',
+    placeholder: 'Nhập tên cá nhân hoặc tổ chức',
+    key: 'name'
+  },
+  { label: 'Email', type: 'text', placeholder: 'Nhập email', key: 'email' },
+  { label: 'Số điện thoại', type: 'text', placeholder: 'Nhập số điện thoại', key: 'phone' }
+]

@@ -17,11 +17,7 @@ const DonationPage = dynamic(() => import('./_components/donation'), {
 })
 
 const StockOrderPage = async () => {
-  return (
-    <div className='mx-auto'>
-      <DonationPage />
-    </div>
-  )
+  return <DonationPage />
 }
 
 export default StockOrderPage
