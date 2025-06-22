@@ -9,6 +9,7 @@ import Dot from '@icons/dot.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { userInfo } from 'os'
 
 import CustomLoadingSidebarSkeleton from '~/components/shared/custom-loading-sidebar-skeleton'
 import reactI18n from '~/config/i18n/react-i18n'
@@ -31,7 +32,7 @@ const MainSidebar = () => {
   // const accountType = userInfo?.account_type || ''
 
   const [isExpanded, setIsExpanded] = useState(true)
-
+  const logoSize = isExpanded ? 40 : 20
   if (isLoadingPermission) return <CustomLoadingSidebarSkeleton />
 
   const renderSidebarItem = (item: SidebarItem, index: number) => {
@@ -122,11 +123,11 @@ const MainSidebar = () => {
         )}
       </div>
       <div className='mx-auto my-2 flex max-w-full flex-col items-center justify-center gap-1'>
-        <div className='grid grid-cols-2 items-center justify-center gap-5'>
-          <Image src='/assets/images/logo_dhbk.jpg' alt='logo' width={50} height={0} />
-          <Image src='/assets/images/logo_50_nam.png' alt='logo' width={50} height={0} />
-          <Image src='/assets/images/logo_doan.png' alt='logo' width={50} height={0} />
-          <Image src='/assets/images/logo_hoi_sv.png' alt='logo' width={50} height={0} />
+        <div className={`flex items-center justify-center ${isExpanded ? 'gap-5' : 'gap-1'}`}>
+          <Image src='/assets/images/logo_dhbk.jpg' alt='logo' width={logoSize} height={0} />
+          <Image src='/assets/images/logo_50_nam.png' alt='logo' width={logoSize} height={0} />
+          <Image src='/assets/images/logo_doan.png' alt='logo' width={logoSize} height={0} />
+          <Image src='/assets/images/logo_hoi_sv.png' alt='logo' width={logoSize} height={0} />
         </div>
         <div className={cn('text-center font-bold text-ct-blue md:text-xl', !isExpanded && 'text-base md:text-base')}>
           BK Hope

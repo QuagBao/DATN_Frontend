@@ -22,7 +22,7 @@ function FormDonation() {
   }
 
   return (
-    <div className='space-y-5 '>
+    <section className='space-y-5 '>
       <p className={`${Crimson.className} text-lg font-bold text-ct-blue md:text-2xl `}>Cách thức ủng hộ</p>
       <Divider />
       <Tabs
@@ -52,7 +52,7 @@ function FormDonation() {
           </Tab>
         ))}
       </Tabs>
-    </div>
+    </section>
   )
 }
 

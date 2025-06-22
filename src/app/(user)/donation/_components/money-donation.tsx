@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { addToast, Button, Input } from '@heroui/react'
 import { useSearchParams } from 'next/navigation'
 
+import CustomInput from '~/components/shared/custom-input'
+import { useAuth } from '~/config/providers'
 import { CONTROL_KEYS } from '~/shared/constants/common.constant'
 import { PROJECT_DONATION } from '~/shared/constants/donation'
 import { formatCurrency } from '~/shared/utils'
@@ -11,8 +13,20 @@ import { formatCurrency } from '~/shared/utils'
 import ModalQrBank from './modal-qr-bank'
 import ScrollSelect from './scroll-select'
 
-function MoneyDonation() {
+export const PROJECT_DONATION_FORM = [
+  {
+    label: 'Tên cá nhân/ tổ chức ủng hộ',
+    type: 'text',
+    placeholder: 'Nhập tên cá nhân hoặc tổ chức',
+    key: 'name'
+  },
+  { label: 'Email', type: 'text', placeholder: 'Nhập email', key: 'email' },
+  { label: 'Số điện thoại', type: 'text', placeholder: 'Nhập số điện thoại', key: 'phone' }
+]
+
+const MoneyDonation = () => {
   const [value, setValue] = useState<number | ''>('')
+  const { userInfo } = useAuth()
   const [selectedIdMoney, setSelectIdMoney] = useState<number | null>(null)
   const displayValue = value === '' ? '' : formatCurrency(Number(value))
   const [isOpen, setIsOpen] = useState(false)
@@ -61,6 +75,21 @@ function MoneyDonation() {
           )
         })}
       </div>
+      {!userInfo && (
+        <>
+          {PROJECT_DONATION_FORM.map((item) => (
+            <CustomInput
+              key={item.key}
+              variant='bordered'
+              color='primary'
+              placeholder={item.placeholder}
+              labelPlacement='inside'
+              type={item.type}
+              label={item.label}
+            />
+          ))}
+        </>
+      )}
       <Input
         placeholder='Số tiền khác'
         variant='bordered'

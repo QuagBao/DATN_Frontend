@@ -33,6 +33,26 @@ export const CollaboratorsDataSchema = z.object({
 
 export const CollaboratorsSchema = z.array(CollaboratorBaseSchema)
 
+export const CollaboratorReqSchema = z.object({
+  project_id: z.string(),
+  account_id: z.string().optional(),
+  full_name: z.string().min(1, { message: 'Yêu cầu tối thiểu 1 ký tự' }).trim().optional(),
+  email: z
+    .string()
+    .trim()
+    .refine((val) => val === '' || EMAIL_REGEX.test(val), {
+      message: 'Không đúng định dạng email'
+    })
+    .optional(),
+  phone: z
+    .string()
+    .min(10, { message: 'Số điện thoại yêu cầu 10 ký tự' })
+    .max(10, { message: 'Số điện thoại yêu cầu 10 ký tự' })
+    .optional()
+})
+
 export type TCollaboratorBaseSchema = z.infer<typeof CollaboratorBaseSchema>
 export type TCollaboratorsSchema = z.infer<typeof CollaboratorsSchema>
 export type TCollaboratorsData = z.infer<typeof CollaboratorsDataSchema>
+
+export type TCollaboratorReqSchema = z.infer<typeof CollaboratorReqSchema>

@@ -6,11 +6,7 @@ const DetailForm = dynamic(() => import('./_components/detail-form'), {
 })
 
 const StockOrderPage = async () => {
-  return (
-    <div className='mx-auto'>
-      <DetailForm />
-    </div>
-  )
+  return <DetailForm />
 }
 
 export default StockOrderPage

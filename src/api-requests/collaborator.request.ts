@@ -1,7 +1,10 @@
 import { API_URL } from '~/config/routes'
 import { axiosHttp } from '~/shared/http/axios'
 import { type TCollaboratorParams } from '~/shared/types/params.type'
-import { type TCollaboratorsData } from '~/shared/validators/schemas/collaborator/collaborator.schema'
+import {
+  type TCollaboratorReqSchema,
+  type TCollaboratorsData
+} from '~/shared/validators/schemas/collaborator/collaborator.schema'
 
 const collaboratorApiRequest = {
   getCollaborators: async (params?: TCollaboratorParams) => {
@@ -14,12 +17,7 @@ const collaboratorApiRequest = {
     defaultParams.limit ??= '10'
     return axiosHttp.get<TCollaboratorsData>(API_URL.PROJECT.GET_COLLABORATORS_ACTIVE, { params: defaultParams })
   },
-  applyCollaborator: async (project_id: string) =>
-    axiosHttp.post(API_URL.USER.APPLY_COLLABORATOR, new URLSearchParams({ project_id }), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    }),
+  applyCollaborator: async (data: TCollaboratorReqSchema) => axiosHttp.post(API_URL.USER.APPLY_COLLABORATOR, data),
   approveCollaborator: async (userId: string) => {
     return axiosHttp.patch(`${API_URL.ADMIN.ACCEPT_COLLABORATOR}/${userId}`)
   },
