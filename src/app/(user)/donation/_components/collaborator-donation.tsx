@@ -19,6 +19,17 @@ import ScrollSelect from './scroll-select'
 type CollaboratorRes = { message: string }
 type ErrorPayload = { detail?: string; message?: string }
 
+export const PROJECT_DONATION_FORM = [
+  {
+    label: 'Tên cá nhân/ tổ chức ủng hộ',
+    type: 'text',
+    placeholder: 'Nhập tên cá nhân hoặc tổ chức',
+    key: 'name'
+  },
+  { label: 'Email', type: 'text', placeholder: 'Nhập email', key: 'email' },
+  { label: 'Số điện thoại', type: 'text', placeholder: 'Nhập số điện thoại', key: 'phone' }
+]
+
 const CollaboratorDonation = () => {
   const searchParams = useSearchParams()
   const idProject = searchParams.get('id') || ''
