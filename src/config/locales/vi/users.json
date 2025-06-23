@@ -3,11 +3,9 @@
 
   "placeholderUniversalSearch": "Tên, email, số điện thoại",
   "placeholderStatus": "Chọn trạng thái",
-  "fieldNameUser": "Tên người dùng",
+  "fieldFullName": "Họ và tên",
   "fieldEmail": "Email",
-  "fieldUserName": "Tên đăng nhập",
   "fieldPhone": "Số điên thoại",
-  "fieldConfirmPassword": "Xác nhận mật khẩu",
   "fieldUniversalSearch": "Tìm kiếm theo thông tin",
   "fieldJoinDate": "Ngày gia nhập",
   "fieldRole": "Vai trò",

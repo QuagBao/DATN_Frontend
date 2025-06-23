@@ -13,17 +13,6 @@ import { formatCurrency } from '~/shared/utils'
 import ModalQrBank from './modal-qr-bank'
 import ScrollSelect from './scroll-select'
 
-export const PROJECT_DONATION_FORM = [
-  {
-    label: 'Tên cá nhân/ tổ chức ủng hộ',
-    type: 'text',
-    placeholder: 'Nhập tên cá nhân hoặc tổ chức',
-    key: 'name'
-  },
-  { label: 'Email', type: 'text', placeholder: 'Nhập email', key: 'email' },
-  { label: 'Số điện thoại', type: 'text', placeholder: 'Nhập số điện thoại', key: 'phone' }
-]
-
 const MoneyDonation = () => {
   const [value, setValue] = useState<number | ''>('')
   const { userInfo } = useAuth()
@@ -33,6 +22,11 @@ const MoneyDonation = () => {
   const searchParams = useSearchParams()
   const idProject = searchParams.get('id') || ''
   const nameProject = searchParams.get('project') || ''
+
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+
   const handleKeyDown = (e: React.KeyboardEvent) =>
     !CONTROL_KEYS.includes(e.key as (typeof CONTROL_KEYS)[number]) && !/^[0-9]$/.test(e.key)
       ? e.preventDefault()
@@ -76,19 +70,35 @@ const MoneyDonation = () => {
         })}
       </div>
       {!userInfo && (
-        <>
-          {PROJECT_DONATION_FORM.map((item) => (
-            <CustomInput
-              key={item.key}
-              variant='bordered'
-              color='primary'
-              placeholder={item.placeholder}
-              labelPlacement='inside'
-              type={item.type}
-              label={item.label}
-            />
-          ))}
-        </>
+        <div className='flex flex-col gap-5'>
+          <CustomInput
+            labelPlacement='inside'
+            label='Tên cá nhân/ tổ chức ủng hộ'
+            placeholder='Nhập tên cá nhân hoặc tổ chức'
+            value={fullName}
+            onValueChange={(val) => setFullName(val)}
+            variant='bordered'
+            color='primary'
+          />
+          <CustomInput
+            labelPlacement='inside'
+            label='Email'
+            placeholder='Nhập email'
+            value={email}
+            onValueChange={(val) => setEmail(val)}
+            variant='bordered'
+            color='primary'
+          />
+          <CustomInput
+            labelPlacement='inside'
+            label='Số điện thoại'
+            placeholder='Nhập số điện thoại'
+            value={phone}
+            onValueChange={(val) => setPhone(val)}
+            variant='bordered'
+            color='primary'
+          />
+        </div>
       )}
       <Input
         placeholder='Số tiền khác'
@@ -109,6 +119,9 @@ const MoneyDonation = () => {
         amount={Number(value)}
         id_project={idProject}
         name_project={nameProject}
+        full_name={fullName}
+        email={email}
+        phone={phone}
       />
     </div>
   )

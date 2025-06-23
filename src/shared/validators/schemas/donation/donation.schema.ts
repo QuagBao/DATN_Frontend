@@ -15,7 +15,7 @@ export const DonationBaseSchema = z.object({
 
 export const DonationPostSchema = z.object({
   account_id: z.string().optional(),
-  name: z.string().trim().optional(),
+  full_name: z.string().trim().optional(),
   email: z.string().trim().optional(),
   phone: z.string().trim().optional(),
   project_id: z.string(),

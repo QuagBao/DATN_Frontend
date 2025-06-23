@@ -17,6 +17,9 @@ interface IModalQrBankProps {
   amount: number
   id_project: string
   name_project: string
+  full_name: string
+  email: string
+  phone: string
 }
 
 interface SheetResponse {
@@ -29,7 +32,16 @@ interface SheetResponse {
   }
 }
 
-const ModalQrBank = ({ isOpen, onClose, amount, id_project, name_project }: IModalQrBankProps) => {
+const ModalQrBank = ({
+  isOpen,
+  onClose,
+  amount,
+  id_project,
+  name_project,
+  full_name,
+  email,
+  phone
+}: IModalQrBankProps) => {
   const [ref, setRef] = useState<string>('')
   const { userInfo } = useAuth()
   const queryClient = useQueryClient()
@@ -65,6 +77,9 @@ const ModalQrBank = ({ isOpen, onClose, amount, id_project, name_project }: IMod
     if (sheet?.paid) {
       createDonation.mutate({
         account_id: userInfo?.account_id || '',
+        full_name: full_name || '',
+        email: email || '',
+        phone: phone || '',
         project_id: id_project,
         amount,
         paytime: sheet.transaction.date,
