@@ -11,7 +11,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Crimson } from 'public/assets/fonts/crimson'
 
-import envConfig from '~/config/env'
 import { PROJECT_BUTTONS, PROJECT_STATUS } from '~/shared/constants/project'
 import { type IProjectItem } from '~/shared/types'
 import { formatCurrency } from '~/shared/utils'
@@ -37,7 +36,7 @@ const ProjectCard = ({
       <CardBody>
         <div className='grid lg:grid-cols-[3.5fr_2.5fr]'>
           <Image
-            src={`${envConfig.NEXT_PUBLIC_IMAGE}${images[0]?.url}`}
+            src={`https://quagbao.id.vn/${images[0]?.url}`}
             className={`w-full object-cover lg:h-full ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}
             alt={images[0].id_image}
             width={800}

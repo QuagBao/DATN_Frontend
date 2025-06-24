@@ -5,8 +5,6 @@ import { type EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 
-import envConfig from '~/config/env'
-
 import { NextButton, PrevButton, usePrevNextButtons } from './EmblaCarouselArrowButtons'
 
 export type ListObject = {

@@ -6,8 +6,6 @@ const configSchema = z.object({
   NEXT_PUBLIC_BANK_ID: z.string(),
   NEXT_PUBLIC_ACCOUNT_NO: z.string(),
   NEXT_PUBLIC_ACCOUNT_NAME: z.string(),
-  NEXT_PUBLIC_IMAGE: z.string(),
-  NEXT_PUBLIC_IMAGE_DEPLOY: z.string(),
   ENCRYPTION_SECRET: z.string(),
   NEXT_PUBLIC_RESPOND_GG_SHEET: z.string()
 })
@@ -19,8 +17,6 @@ const configProject = configSchema.safeParse({
   NEXT_PUBLIC_BANK_ID: process.env.NEXT_PUBLIC_BANK_ID,
   NEXT_PUBLIC_ACCOUNT_NO: process.env.NEXT_PUBLIC_ACCOUNT_NO,
   NEXT_PUBLIC_ACCOUNT_NAME: process.env.NEXT_PUBLIC_ACCOUNT_NAME,
-  NEXT_PUBLIC_IMAGE: process.env.NEXT_PUBLIC_IMAGE,
-  NEXT_PUBLIC_IMAGE_DEPLOY: process.env.NEXT_PUBLIC_IMAGE_DEPLOY,
   ENCRYPTION_SECRET: process.env.ENCRYPTION_SECRET,
   NEXT_PUBLIC_RESPOND_GG_SHEET: process.env.NEXT_PUBLIC_RESPOND_GG_SHEET
 })
