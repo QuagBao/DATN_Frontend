@@ -328,8 +328,8 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
                                 src={`https://quagbao.id.vn/${img.url}`}
                                 alt='existing'
                                 className='h-full w-full object-cover'
-                                width={500}
-                                height={500}
+                                width={100}
+                                height={100}
                                 unoptimized
                               />
                               <Button

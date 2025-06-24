@@ -34,8 +34,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   src={`https://quagbao.id.vn/${item.url}`}
                   alt={item.id_image}
                   className='w-screen object-cover lg:h-[480px]'
-                  width={800}
-                  height={800}
+                  width={100}
+                  height={100}
                   unoptimized
                 />
               </div>

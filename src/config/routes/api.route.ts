@@ -78,7 +78,7 @@ export const API_URL = {
 
     // Action with projects
     EDIT_PROJECT: `${ADMIN_PREFIX}${PROJECT_PREFIX}/update-by-owner`,
-    DELETE_PROJECT: `${ADMIN_PREFIX}${PROJECT_PREFIX}/delete-by-owner`,
+    DELETE_PROJECT: `${PROJECT_PREFIX}/delete-by-owner`,
     EXPORT_COLLABORATOR: `${ADMIN_PREFIX}${COLLABORATOR_PREFIX}/export`,
     IMPORT_COLLABORATOR: `${ADMIN_PREFIX}${COLLABORATOR_PREFIX}/import`,
     EXPORT_DONOR: `${ADMIN_PREFIX}${DONOR_PREFIX}/export`,

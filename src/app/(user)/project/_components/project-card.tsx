@@ -39,8 +39,8 @@ const ProjectCard = ({
             src={`https://quagbao.id.vn/${images[0]?.url}`}
             className={`w-full object-cover lg:h-full ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}
             alt={images[0].id_image}
-            width={800}
-            height={800}
+            width={100}
+            height={100}
             unoptimized
           />
           <div className={`flex flex-col justify-between gap-3 p-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
