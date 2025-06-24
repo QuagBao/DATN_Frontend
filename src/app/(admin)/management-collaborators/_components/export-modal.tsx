@@ -58,6 +58,7 @@ const ExportModal = ({ isOpen, onClose }: ExportModalProps) => {
         title: t('success'),
         description: 'Xuất danh sách tình nguyện viên thành công'
       })
+      onClose()
     },
     onError: (error) => {
       handleApiEntityError({ error, setError })

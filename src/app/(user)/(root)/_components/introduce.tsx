@@ -36,7 +36,7 @@ const Introduce = ({ total_projects, total_collaborators, total_donors }: Introd
             <p className={` text-lg font-bold  md:text-4xl ${colorClassNames.textColor} ${Crimson.className}`}>
               {total_donors}
             </p>
-            <p>Người ủng hộ</p>
+            <p>Số lượt ủng hộ</p>
           </div>
           <div className='grid grid-cols-[1fr_3fr] md:grid-cols-1'>
             <p className={` text-lg font-bold  md:text-4xl ${colorClassNames.textColor} ${Crimson.className}`}>

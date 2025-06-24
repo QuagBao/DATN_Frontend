@@ -41,6 +41,7 @@ const ProjectCard = ({
             alt={images[0].id_image}
             width={800}
             height={800}
+            unoptimized
           />
           <div className={`flex flex-col justify-between gap-3 p-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
             <div className='flex flex-col gap-2 md:gap-5'>

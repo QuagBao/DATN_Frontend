@@ -9,6 +9,7 @@
   "fieldName": "Cá nhân/ Tổ chức ủng hộ",
   "fieldAmount": "Số tiền (VNĐ)",
   "exportDonor": "In danh sách",
+  "importDonor": "Nhập danh sách",
 
   "success": "Thành công",
   "clear": "Xóa bộ lọc",

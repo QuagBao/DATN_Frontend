@@ -330,6 +330,7 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
                                 className='h-full w-full object-cover'
                                 width={500}
                                 height={500}
+                                unoptimized
                               />
                               <Button
                                 isIconOnly

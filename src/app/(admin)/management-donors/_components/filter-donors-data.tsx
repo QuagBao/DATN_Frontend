@@ -13,6 +13,7 @@ import { APP_ROUTES } from '~/config/routes'
 import { type TDonationParams } from '~/shared/types/params.type'
 
 import ExportModalDonors from './export-modal-donors'
+import ImportModalDonors from './import-modal-donors'
 
 const FilterDonorsData = () => {
   const { t } = useTranslation('management-donors')
@@ -49,8 +50,13 @@ const FilterDonorsData = () => {
   })
 
   const [isExportModal, setIsExportModal] = useState(false)
+  const [isImportModal, setIsImportModal] = useState(false)
   const handleExportModal = () => {
     setIsExportModal(true)
+  }
+
+  const handleImportModal = () => {
+    setIsImportModal(true)
   }
 
   useEffect(() => {
@@ -134,9 +140,14 @@ const FilterDonorsData = () => {
             />
           </div>
           <div className='flex items-center justify-between'>
-            <Button color='primary' type='button' onPress={() => handleExportModal()}>
-              {t('exportDonor')}
-            </Button>
+            <div className='flex items-center gap-2'>
+              <Button color='primary' type='button' onPress={() => handleExportModal()}>
+                {t('exportDonor')}
+              </Button>
+              <Button color='primary' type='button' onPress={() => handleImportModal()}>
+                {t('importDonor')}
+              </Button>
+            </div>
             <div className='ml-auto flex items-center justify-end gap-2'>
               <Button color='danger' variant='bordered' type='button' onPress={handleClearFilter}>
                 {t('clear')}
@@ -149,6 +160,7 @@ const FilterDonorsData = () => {
         </div>
       </form>
       {isExportModal && <ExportModalDonors isOpen={isExportModal} onClose={() => setIsExportModal(false)} />}
+      {isImportModal && <ImportModalDonors isOpen={isImportModal} onClose={() => setIsImportModal(false)} />}
       <Divider />
     </div>
   )

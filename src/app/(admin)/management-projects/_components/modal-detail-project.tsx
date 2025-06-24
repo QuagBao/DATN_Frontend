@@ -93,7 +93,7 @@ const ModalDetailProject = ({ isOpen, onClose, projectDetail }: IProjectDetailMo
                   <p className='text-ct-primary'>Cộng tác viên</p>
                 </div>
                 <p className={`${Crimson.className} text-xl font-semibold text-warning md:text-2xl`}>
-                  {formatCurrency(Number(projectData?.total_collaborator) || 0)}
+                  {formatCurrency(Number(projectData?.total_collaborators) || 0)}
                 </p>
               </div>
               <p className='flex items-center justify-between'>

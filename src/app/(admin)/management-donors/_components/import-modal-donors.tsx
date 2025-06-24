@@ -1,25 +1,26 @@
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { addToast, Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@heroui/react'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { type AxiosResponse } from 'axios'
 import { Crimson } from 'public/assets/fonts/crimson'
 
 import donorApiRequest from '~/api-requests/donor.request'
 import CustomInfiniteScrollSelect from '~/components/shared/custom-infinite-scroll-select'
+import { API_URL } from '~/config/routes'
 import { handleApiEntityError } from '~/shared/utils'
 
-interface ExportModalDonorsProps {
+interface ImportModalDonorsProps {
   isOpen: boolean
   onClose: () => void
 }
 
 interface FormValues {
   projectId: string
-  nameProject: string
+  file: FileList | null
 }
 
-const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
+const ImportModalDonors = ({ isOpen, onClose }: ImportModalDonorsProps) => {
   const { t } = useTranslation('management-donors')
   const {
     register,
@@ -29,34 +30,22 @@ const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
     watch,
     setError
   } = useForm<FormValues>({
-    defaultValues: { projectId: '', nameProject: '' }
+    defaultValues: { projectId: '' }
   })
 
   const selectedProjectId = watch('projectId')
-  const selectedProject = watch('nameProject')
+  const queryClient = useQueryClient()
 
   const { mutate, isPending } = useMutation({
-    mutationFn: async (projectId: string) => donorApiRequest.exportDonors(projectId),
-    onSuccess: (response: AxiosResponse<Blob>) => {
-      const blob = new Blob([response.data], { type: 'text/csv; charset=utf-8' })
-
-      const safeName = selectedProject ? selectedProject.replace(/\s+/g, '_') : 'download'
-      const filename = `DS_Ủng_hộ_chương_trinh_${safeName}.csv`
-
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = filename
-      document.body.appendChild(a)
-      a.click()
-      a.remove()
-      window.URL.revokeObjectURL(url)
-
+    mutationFn: async ({ projectId, file }: { projectId: string; file: File }) =>
+      donorApiRequest.importDonors(projectId, file),
+    onSuccess: (response: AxiosResponse<{ message: string }>) => {
       addToast({
         color: 'success',
         title: t('success'),
-        description: 'Xuất danh sách ủng hộ thành công'
+        description: response.data.message
       })
+      queryClient.invalidateQueries({ queryKey: [API_URL.PROJECT.GET_DONORS], exact: false })
       onClose()
     },
     onError: (error) => {
@@ -65,7 +54,13 @@ const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
   })
 
   const onSubmit = (data: FormValues) => {
-    mutate(data.projectId)
+    const fileList = data.file
+    if (!fileList || fileList.length === 0) {
+      setError('file', { message: 'Vui lòng chọn tệp CSV' })
+      return
+    }
+    const file = fileList[0]
+    mutate({ projectId: data.projectId, file })
   }
 
   return (
@@ -81,7 +76,7 @@ const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
       }}
     >
       <ModalContent>
-        <ModalHeader>Xuất danh sách ủng hộ</ModalHeader>
+        <ModalHeader>Nhập danh sách ủng hộ</ModalHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ModalBody>
             <p className={`${Crimson.className} text-ct-blue`}>Chương trình:</p>
@@ -94,13 +89,24 @@ const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
                 setValue('projectId', opt.id, { shouldValidate: true })
               }}
             />
+
+            <div className='mt-4 flex flex-col gap-1'>
+              <p className={`${Crimson.className} text-ct-blue`}>File CSV:</p>
+              <input
+                type='file'
+                accept='.csv'
+                {...register('file', { required: 'Vui lòng chọn file CSV' })}
+                className='mt-1'
+              />
+              {errors.file && <p className='text-red-600'>{errors.file.message}</p>}
+            </div>
           </ModalBody>
           <ModalFooter>
             <Button variant='bordered' color='danger' onPress={onClose}>
               Hủy
             </Button>
             <Button color='primary' type='submit' isLoading={isPending} isDisabled={isPending}>
-              Xuất
+              Nhập liệu
             </Button>
           </ModalFooter>
         </form>
@@ -109,4 +115,4 @@ const ExportModalDonors = ({ isOpen, onClose }: ExportModalDonorsProps) => {
   )
 }
 
-export default ExportModalDonors
+export default ImportModalDonors

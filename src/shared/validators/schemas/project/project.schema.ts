@@ -14,7 +14,7 @@ export const ProjectBaseSchema = z.object({
     })
   ),
   total_donors: z.number().optional(),
-  total_collaborator: z.number().optional(),
+  total_collaborators: z.number().optional(),
   current_numeric: z.number().optional(),
   total_numeric: z.union([z.number(), z.string()]),
   status: z.string().optional(),

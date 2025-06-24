@@ -23,8 +23,8 @@ const ListProjects: React.FC<ListProjectProps> = ({ data, paginationResponse }) 
             images={item.images}
             title={item.name_project}
             description={item.description}
-            total_donors={item.total_collaborator ?? 0}
-            total_collaborators={item.total_collaborator ?? 0}
+            total_donors={item.total_donors ?? 0}
+            total_collaborators={item.total_collaborators ?? 0}
             goal={typeof item.total_numeric === 'number' ? item.total_numeric : Number(item.total_numeric)}
             achieved={item.current_numeric ?? 0}
             startDate={item.start_date}

@@ -11,6 +11,14 @@ const donorApiRequest = {
   },
   exportDonors: async (id_project: string) => {
     return axiosHttp.get(API_URL.ADMIN.EXPORT_DONOR, { params: { id_project }, responseType: 'blob' })
+  },
+  importDonors: async (id_project: string, file: File) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    return axiosHttp.post(API_URL.ADMIN.IMPORT_DONOR, formData, {
+      params: { id_project },
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
   }
 }
 

@@ -26,7 +26,7 @@ const ManagementDonors = () => {
   const searchParams = useSearchParams()
 
   const { data: donorsDataResponse, isLoading: donorsLoading } = useQuery({
-    queryKey: [API_URL.PROJECT.ALL_PROJECT, String(searchParams)],
+    queryKey: [API_URL.PROJECT.GET_DONORS, String(searchParams)],
     queryFn: async () => {
       const res = await donorService.getDonors(searchParams)
       return res.data

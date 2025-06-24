@@ -30,7 +30,7 @@ function DetailForm() {
         title={data?.data.name_project ?? ''}
         description={data?.data.description ?? ''}
         total_donors={data?.data.total_donors ?? 0}
-        total_collaborators={data?.data.total_collaborator ?? 0}
+        total_collaborators={data?.data.total_collaborators ?? 0}
         goal={Number(data?.data.total_numeric) || 0}
         achieved={data?.data.current_numeric ?? 0}
         startDate={data?.data.start_date ?? '01/01/2005'}

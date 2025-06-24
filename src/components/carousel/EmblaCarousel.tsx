@@ -36,6 +36,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   className='w-screen object-cover lg:h-[480px]'
                   width={800}
                   height={800}
+                  unoptimized
                 />
               </div>
             </div>
