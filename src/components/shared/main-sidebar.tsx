@@ -9,7 +9,6 @@ import Dot from '@icons/dot.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { userInfo } from 'os'
 
 import CustomLoadingSidebarSkeleton from '~/components/shared/custom-loading-sidebar-skeleton'
 import reactI18n from '~/config/i18n/react-i18n'
@@ -27,7 +26,7 @@ const Indicator = ({ isOpen = false }: AccordionItemIndicatorProps) => {
 
 const MainSidebar = () => {
   const pathname = usePathname()
-  const { isLoadingPermission } = useAuth()
+  const { isLoadingPermission, role } = useAuth()
   const { t } = useTranslation('main-sidebar', { i18n: reactI18n })
   // const accountType = userInfo?.account_type || ''
 
@@ -134,7 +133,7 @@ const MainSidebar = () => {
         </div>
       </div>
       <div className='my-2 flex flex-col space-y-2 overflow-x-hidden [&>p]:hidden'>
-        {MAIN_SIDEBAR_ITEMS.map(renderSidebarItem)}
+        {MAIN_SIDEBAR_ITEMS.filter((item) => !item.role || item.role === role).map(renderSidebarItem)}
       </div>
     </div>
   )

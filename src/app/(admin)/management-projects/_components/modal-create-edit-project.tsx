@@ -326,7 +326,7 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
                           {existingImages.map((img) => (
                             <div key={img.id_image} className='relative h-24 w-24 overflow-hidden rounded border'>
                               <Image
-                                src={`${envConfig.NEXT_PUBLIC_IMAGE}${img.url}`}
+                                src={`https://quagbao.id.vn/${img.url}`}
                                 alt='existing'
                                 className='h-full w-full object-cover'
                                 width={500}

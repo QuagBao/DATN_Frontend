@@ -15,9 +15,11 @@ interface AuthContextType {
   isLoggedIn: boolean
   setIsLoggedIn: (isLoggedIn: boolean) => void
   userInfo: IProfile | null
+  role: string
   resourcePermissions: string[]
   actionPermissions: TActionPermissions
   isLoadingPermission?: boolean
+  setRole: React.Dispatch<React.SetStateAction<string>>
   setUserInfo: (userInfo: IProfile | null) => void
   logout: () => void
 }
@@ -26,6 +28,8 @@ const AuthContext = createContext<AuthContextType>({
   isLoggedIn: false,
   setIsLoggedIn: () => {},
   userInfo: null,
+  role: '',
+  setRole: () => {},
   resourcePermissions: [],
   actionPermissions: {},
   isLoadingPermission: false,
@@ -40,14 +44,17 @@ interface AuthProviderProps {
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(Boolean(useCookieStore.getCookie('accountType')))
   const [userInfo, setUserInfo] = useState<IProfile | null>(null)
+  const [role, setRole] = useState<string>('')
   const [resourcePermissions, setResourcePermissions] = useState<string[]>([])
   const [actionPermissions, setActionPermissions] = useState<TActionPermissions>({})
+  const accountType = useCookieStore.getCookie('accountType')
 
   useQuery({
-    queryKey: [API_URL.USER.GET_PROFILE, userInfo],
+    queryKey: [API_URL.USER.GET_PROFILE, accountType],
     queryFn: async () => {
       const res = await userApiRequest.getMe()
       setUserInfo(res.data)
+      setRole(accountType ?? '')
       return res
     },
     enabled: isLoggedIn
@@ -56,6 +63,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const logout = () => {
     setIsLoggedIn(false)
     setUserInfo(null)
+    setRole('')
     setResourcePermissions([])
     setActionPermissions({})
   }
@@ -65,15 +73,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       isLoggedIn,
       setIsLoggedIn,
       userInfo,
+      role,
       resourcePermissions,
       actionPermissions,
       setUserInfo,
+      setRole,
       // isLoadingPermission,
       logout
     }),
     [
       isLoggedIn,
       userInfo,
+      role,
       resourcePermissions,
       actionPermissions
       //  isLoadingPermission

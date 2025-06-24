@@ -10,7 +10,7 @@ export interface SidebarItem {
   label: string
   icon?: JSX.Element
   path?: string
-  isAdminOnly?: boolean
+  role?: string
   items?: { label: string; icon?: JSX.Element; path: string }[]
 }
 
@@ -20,13 +20,13 @@ export const MAIN_SIDEBAR_ITEMS: SidebarItem[] = [
     label: 'usersManagement',
     icon: <UserManagement className='size-5' />,
     path: APP_ROUTES.RESOURCES.USERS,
-    isAdminOnly: true
+    role: '3'
   },
   {
     label: 'staffsManagement',
     icon: <StaffManagement className='size-5' />,
     path: APP_ROUTES.RESOURCES.STAFFS,
-    isAdminOnly: true
+    role: '3'
   },
   {
     label: 'projectsManagement',
