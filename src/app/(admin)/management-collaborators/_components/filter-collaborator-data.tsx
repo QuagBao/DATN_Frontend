@@ -15,6 +15,7 @@ import { APP_ROUTES } from '~/config/routes'
 import { type TCollaboratorParams } from '~/shared/types/params.type'
 
 import ExportModal from './export-modal'
+import ImportModal from './import-modal'
 
 interface IFilterCollaboratorsProps {
   collaboratorStatusOptions?: { key: string; value: string }[]
@@ -103,9 +104,12 @@ const FilterCollaborators = ({ collaboratorStatusOptions }: IFilterCollaborators
   })
 
   const [isExportModal, setIsExportModal] = useState(false)
-
+  const [isImportModal, setIsImportModal] = useState(false)
   const handleOpenExportModal = () => {
     setIsExportModal(true)
+  }
+  const handleOpenImportModal = () => {
+    setIsImportModal(true)
   }
 
   return (
@@ -149,9 +153,14 @@ const FilterCollaborators = ({ collaboratorStatusOptions }: IFilterCollaborators
             />
           </div>
           <div className='flex items-center justify-between'>
-            <Button color='primary' onPress={() => handleOpenExportModal()}>
-              {t('exportCollaborator')}
-            </Button>
+            <div className='flex items-center gap-2'>
+              <Button color='primary' onPress={() => handleOpenExportModal()}>
+                {t('exportCollaborator')}
+              </Button>
+              <Button color='primary' onPress={() => handleOpenImportModal()}>
+                {t('importCollaborator')}
+              </Button>
+            </div>
 
             <div className='ml-auto flex items-center justify-end gap-2'>
               <Button color='danger' variant='bordered' type='button' onPress={handleClearFilter}>
@@ -165,6 +174,7 @@ const FilterCollaborators = ({ collaboratorStatusOptions }: IFilterCollaborators
         </div>
       </form>
       {isExportModal && <ExportModal isOpen={isExportModal} onClose={() => setIsExportModal(false)} />}
+      {isImportModal && <ImportModal isOpen={isImportModal} onClose={() => setIsImportModal(false)} />}
       <Divider />
     </div>
   )

@@ -29,6 +29,14 @@ const collaboratorApiRequest = {
       params: { id_project },
       responseType: 'blob'
     })
+  },
+  importCollaborator: async (id_project: string, file: File) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    return axiosHttp.post(API_URL.ADMIN.IMPORT_COLLABORATOR, formData, {
+      params: { id_project },
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
   }
 }
 

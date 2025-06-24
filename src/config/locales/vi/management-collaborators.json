@@ -21,7 +21,7 @@
   "modalDeleteCollaborator": "Xóa tình nguyện viên",
   "modalDeleteCollaboratorMessage": "Bạn có chắc chắn muốn xóa tình nguyện viên đã chọn?",
   "exportCollaborator": "In danh sách",
-
+  "importCollaborator": "Nhập danh sách",
   "pending": "Chờ duyệt",
   "active": "Đã duyệt",
   "search": "Tìm kiếm",
