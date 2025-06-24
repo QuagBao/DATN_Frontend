@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { addToast, Button } from '@heroui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -42,9 +43,10 @@ const CollaboratorDonation = () => {
     handleSubmit,
     reset,
     setError,
+    setValue,
     formState: { errors }
   } = useForm<TCollaboratorReqSchema>({
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       project_id: idProject,
       account_id: userInfo?.account_id || '',
@@ -54,6 +56,13 @@ const CollaboratorDonation = () => {
     },
     resolver: zodResolver(CollaboratorReqSchema)
   })
+
+  // Cập nhật project_id khi idProject thay đổi
+  useEffect(() => {
+    if (idProject) {
+      setValue('project_id', idProject) // Cập nhật giá trị project_id trong form
+    }
+  }, [idProject, setValue])
 
   // Mutation để gọi API
   const { mutate, isPending } = useMutation<
