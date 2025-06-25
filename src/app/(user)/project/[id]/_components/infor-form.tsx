@@ -1,5 +1,7 @@
 import { Accordion, AccordionItem } from '@heroui/react'
 
+import { formatTextWithLineBreaks } from '~/shared/utils/format-text.util'
+
 interface InforFormProps {
   overview: string
 }
@@ -14,7 +16,7 @@ const InforForm = ({ overview }: InforFormProps) => {
       }}
     >
       <AccordionItem key='1' aria-label='Giới thiệu' title='Giới thiệu'>
-        <p className='py-2'>{overview}</p>
+        <p className='py-2'>{formatTextWithLineBreaks(overview)}</p>
       </AccordionItem>
     </Accordion>
   )

@@ -15,6 +15,7 @@ import EmblaCarousel from '~/components/carousel/EmblaCarousel'
 import { PROJECT_BUTTONS, PROJECT_STATUS } from '~/shared/constants/project'
 import { type IProjectItem } from '~/shared/types'
 import { formatCurrency } from '~/shared/utils'
+import { formatTextWithLineBreaks } from '~/shared/utils/format-text.util'
 
 const CardDetail = ({
   id_project,
@@ -69,7 +70,9 @@ const CardDetail = ({
                 </div>
 
                 <p className={`${Crimson.className} text-xl font-bold text-ct-blue md:text-2xl`}>{title}</p>
-                <p className='line-clamp-3 truncate text-wrap text-sm text-ct-primary md:text-base'>{description}</p>
+                <p className='line-clamp-3 truncate text-wrap text-sm text-ct-primary md:text-base'>
+                  {formatTextWithLineBreaks(description || '')}
+                </p>
                 <div className='flex flex-col justify-center gap-1'>
                   <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-1'>

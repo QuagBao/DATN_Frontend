@@ -14,6 +14,7 @@ import CustomLoadingModal from '~/components/shared/custom-loading-modal'
 import { API_URL } from '~/config/routes'
 import { PROJECT_STATUS } from '~/shared/constants/project'
 import { formatCurrency } from '~/shared/utils'
+import { formatTextWithLineBreaks } from '~/shared/utils/format-text.util'
 import { type TProjectBaseSchema } from '~/shared/validators'
 
 interface IProjectDetailModalProps {
@@ -75,7 +76,7 @@ const ModalDetailProject = ({ isOpen, onClose, projectDetail }: IProjectDetailMo
               </div>
             </div>
             <div className='w-full'>
-              <p>{projectData?.description}</p>
+              <p>{formatTextWithLineBreaks(projectData?.description || '')}</p>
             </div>
             <div className='grid w-full grid-cols-2 gap-x-5 gap-y-2'>
               <div className='flex items-center justify-between'>
@@ -114,7 +115,7 @@ const ModalDetailProject = ({ isOpen, onClose, projectDetail }: IProjectDetailMo
                 <FileText className='size-5 text-ct-blue md:size-6' />
                 <p>Nội dung:</p>
               </div>
-              <p>{projectData?.content}</p>
+              <p>{formatTextWithLineBreaks(projectData?.content || '')}</p>
             </div>
           </div>
         </ModalBody>

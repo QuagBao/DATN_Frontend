@@ -14,6 +14,7 @@ import { Crimson } from 'public/assets/fonts/crimson'
 import { PROJECT_BUTTONS, PROJECT_STATUS } from '~/shared/constants/project'
 import { type IProjectItem } from '~/shared/types'
 import { formatCurrency } from '~/shared/utils'
+import { formatTextWithLineBreaks } from '~/shared/utils/format-text.util'
 
 const ProjectCard = ({
   index,
@@ -67,7 +68,9 @@ const ProjectCard = ({
               >
                 {title}
               </Link>
-              <p className='line-clamp-3 truncate text-wrap text-sm text-ct-primary md:text-base'>{description}</p>
+              <p className='line-clamp-3 truncate text-wrap text-sm text-ct-primary md:text-base'>
+                {formatTextWithLineBreaks(description || '')}
+              </p>
 
               <div className='flex flex-col justify-center gap-1'>
                 <div className='flex items-center justify-between'>
