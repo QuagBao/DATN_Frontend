@@ -325,7 +325,7 @@ const ModalCreateEditProject = ({ isOpen, onClose, isCreateModal, projectEdit }:
                           {existingImages.map((img) => (
                             <div key={img.id_image} className='relative h-24 w-24 overflow-hidden rounded border'>
                               <Image
-                                src={`https://quagbao.id.vn/${img.url}`}
+                                src={`https://datn-backend-1.onrender.com/${img.url}`}
                                 alt='existing'
                                 className='h-full w-full object-cover'
                                 width={100}

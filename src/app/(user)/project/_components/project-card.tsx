@@ -37,7 +37,7 @@ const ProjectCard = ({
       <CardBody>
         <div className='grid lg:grid-cols-[3.5fr_2.5fr]'>
           <Image
-            src={`https://quagbao.id.vn/${images[0]?.url}`}
+            src={`https://datn-backend-1.onrender.com/${images[0]?.url}`}
             className={`w-full object-cover lg:h-full ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}
             alt={images[0].id_image}
             width={100}
